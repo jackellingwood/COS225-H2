@@ -6,6 +6,10 @@ public class Grove {
         _name = name;
     }
 
+    public String getName() {
+        return _name;
+    }
+
     public int plant(Tree tree) {
         for (int i = 0; i < _trees.length; i++) {
             if (_trees[i] == null) {
@@ -24,6 +28,12 @@ public class Grove {
 
     @Override
     public String toString() {
-        return "" + _trees.length;
+        int groveSize = 0;
+        for (int i = 0; i < _trees.length; i++) {
+            if (_trees[i] != null) {
+                groveSize++;
+            }
+        }
+        return "" + groveSize;
     }
 }
